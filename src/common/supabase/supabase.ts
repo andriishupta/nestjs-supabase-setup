@@ -1,6 +1,7 @@
 import { Inject, Injectable, Logger, Scope } from '@nestjs/common';
 import { Request } from 'express';
 import { REQUEST } from '@nestjs/core';
+import { ConfigService } from '@nestjs/config';
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
@@ -13,6 +14,7 @@ export class Supabase {
 
   constructor(
     @Inject(REQUEST) private readonly request: Request,
+    private readonly configService: ConfigService,
   ) {}
 
   getClient() {
@@ -25,8 +27,8 @@ export class Supabase {
     this.logger.log('initialising new supabase client for new Scope.REQUEST');
 
     this.clientInstance = createClient(
-      process.env.SUPABASE_URL,
-      process.env.SUPABASE_KEY,
+      this.configService.get('SUPABASE_URL'),
+      this.configService.get('SUPABASE_KEY'),
       {
         autoRefreshToken: true,
         detectSessionInUrl: false,
