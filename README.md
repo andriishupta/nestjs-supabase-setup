@@ -2,7 +2,7 @@
 
 ## Description
 This is an example of how to setup and use Supabase with Nest.js: Auth and Client.
-Follow the [article](https://andriishupta.dev/setup-supabase-with-nestjs) for more info.
+Follow the [article](https://blog.andriishupta.dev/setup-supabase-with-nestjs) for more info.
 
 Using in your app:
 - copy **supabase** folder
