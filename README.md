@@ -1,5 +1,7 @@
 # nestjs-supabase-setup
 
+> This is an example for Supabase v1. The API has changed in later versions, but the most important idea here - use NestJS's Services with the correct scope to have a separate `SupabaseInstance` for different requests https://docs.nestjs.com/fundamentals/injection-scopes
+
 ## Description
 This is an example of how to setup and use Supabase with Nest.js: Auth and Client.
 Follow the [article](https://blog.andriishupta.dev/setup-supabase-with-nestjs) for more info.
